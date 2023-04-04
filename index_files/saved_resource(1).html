@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<!-- saved from url=(0039)https://feed.mikle.com/widget/v2/66703/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>FeedWind</title>
+	<style type="text/css">
+#loading {
+	margin: 0 auto;
+	padding: 20px;
+	text-align: center;
+}
+
+#loading .fw-loader-msg {
+	font-family: arial;
+	font-size: 15px;
+	color: #848484;
+	padding-top: 5px;
+}
+
+#loading .fw-loader-msg:after {
+	content: ' .';
+	font-weight: bold;
+	-webkit-animation: dots 1s steps(5, end) infinite;
+	animation: dots 1s steps(5, end) infinite;
+}
+
+@-webkit-keyframes dots {
+
+	0%,
+	20% {
+		color: rgba(0, 0, 0, 0);
+		text-shadow:
+			.25em 0 0 rgba(0, 0, 0, 0),
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	40% {
+		color: gray;
+		text-shadow:
+			.25em 0 0 rgba(0, 0, 0, 0),
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	60% {
+		text-shadow:
+			.25em 0 0 gray,
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	80%,
+	100% {
+		text-shadow:
+			.25em 0 0 gray,
+			.5em 0 0 gray;
+	}
+}
+
+@keyframes dots {
+
+	0%,
+	20% {
+		color: rgba(0, 0, 0, 0);
+		text-shadow:
+			.25em 0 0 rgba(0, 0, 0, 0),
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	40% {
+		color: gray;
+		text-shadow:
+			.25em 0 0 rgba(0, 0, 0, 0),
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	60% {
+		text-shadow:
+			.25em 0 0 gray,
+			.5em 0 0 rgba(0, 0, 0, 0);
+	}
+
+	80%,
+	100% {
+		text-shadow:
+			.25em 0 0 gray,
+			.5em 0 0 gray;
+	}
+}
+
+#error {
+	width: 90%;
+	font-family: arial;
+	font-size: 15px;
+	line-height: 22px;
+	border: 1px solid #ccc;
+	padding: 10px 7px;
+	text-align: center;
+}
+
+	</style>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=2.0">
+	<script src="./jquery.min.js.download"></script>
+</head>
+<body><!--
+Last crawl date: 2023-04-04 09:08:17 +0000
+Next crawl date: 2023-04-04 09:23:17 +0000
+Fingerprint: bc4c9fe4494fb9644fe85d0754016bf9
+-->
+<style type="text/css">
+	html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {border: 0;font-family: inherit;font-size: 100%;font-style: inherit;font-weight: inherit;margin: 0;outline: 0;padding: 0;vertical-align: baseline;}
+	html{
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	/*overflow-y: scroll;  Keeps page centred in all browsers regardless of content height */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust: 100%; /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */}
+	em{font-style:italic;}
+	body{margin:0;padding:0;overflow-x:hidden;}
+	img{border:none;}
+	a{text-decoration: none;}
+	#fw-container{width:100%;margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;font-size:16px;border:0px solid #dbdee1;border-radius:5px;overflow:hidden;box-sizing:border-box;text-align: left;}
+	header{margin:0;padding:0;background-color:#ffffff;background-image:none;font-size:16px;font-family:Arial, Helvetica, sans-serif;}
+	header .fw-feed-title{margin:0 20px;padding:20px 0 15px 0;word-wrap:break-word;border-bottom:1px solid #dbdee1;text-align: left;}
+	header .fw-feed-title a:link{color:#505659;}
+	header .fw-feed-title a:hover{color:#505659;}
+	header .fw-feed-title a:visited{color:#505659;}
+	#fw-feed-items-scroll-area{background-color:#252525; background-image:none; width: 1px; min-width: 100%; overflow:hidden;}
+
+	#fw-feed-items{margin:0;padding:0; overflow:hidden;}
+	.fw-feed-item{
+		margin:0;padding: 10px 0;		clear:both;			border-bottom: 1px dashed #CCCCCC;	}
+	.fw-feed-item:hover{
+		margin:0;padding: 10px 0;		clear:both;
+	}
+	#fw-feed-items .fw-feed-item-url{display: block;overflow: hidden;}
+	#fw-feed-items .fw-feed-item-url[onclick] { cursor: pointer;}
+   	.fw-feed-item-image-module{margin:0 0 0 5px; padding:0;float:left;}		.fw-feed-title{margin:0 20px;padding:20px 0 15px 0;word-wrap:break-word;border-bottom:1px solid #dbdee1;}
+		.fw-feed-item-image{margin:0; padding:0;width:110px;height:100px;overflow:hidden;}
+		.fw-feed-item-content-module{margin:0 0 0 5px;padding:0 0 0 5px;overflow:hidden; }
+	.fw-feed-item-more-link{margin:0 2px 0 0;padding:0 2px 0 0;color:#ffffff;line-height:1.5;font-size:12px;overflow:hidden;}
+	.fw-feed-item-title{margin:0 2px 0 0;padding:0 2px 0 0;color:#ffffff;line-height:1.5;font-size:12px;overflow:hidden;display:block;}
+	.fw-feed-item-description{margin:0 2px 0 0;padding:0 2px 0 0;color:#505659;word-wrap:break-word;line-height:1.5;font-size:12px;overflow: hidden;display: block;}
+	.fw-feed-item-date{margin:5px 0 0 0;padding:0px;font-size:12px;color:#505659;overflow:hidden;text-overflow:ellipsis;display:block}/***非表示の場合はdisplay:none***/
+	.fw-feed-item-link{margin:0;padding:0;font-size:16px;color: #000000 ;overflow:hidden;text-overflow:ellipsis;display:block;}/***非表示の場合はdisplay:none***/	.fw-feed-item-image img {
+		width: 100%;
+		height: 100%;
+	}	.fw-feed-more-posts-link {
+		padding:10px;
+		font-size:14px;
+		background-color:#000000;text-align:right;
+	}
+	.fw-feed-more-posts-link a{
+		color:#000000;
+	}
+	.fw-feed-item-author-name {margin:0 2px 0 0;padding:0 2px 0 0;color:#333333;word-wrap:break-word;line-height:1.5;font-size:12px;overflow: hidden;display: block;	}
+
+	
+	.fw-feed-item table {
+		margin: 0 auto;
+		display: table !important;
+	}
+
+	.fw-feed-item table td, .fw-feed-item table tr {
+		height: 0px !important;
+	}
+	.fw-feed-item.ad {
+		padding:0  !important;
+		border: none !important;
+	}
+	.fw-feed-item table img {
+		width:initial;
+		height:auto;
+	}</style><style type="text/css">:focus-visible {
+	outline-offset: 1px;
+	outline: 2px solid #000000;
+}
+
+.fw-branding {
+	background: transparent !important;
+	text-align: center;
+	height: 43px;
+	font-size: 12px;
+	font-family: arial;
+	margin-top: 8px;
+	display: block !important;
+	visibility: visible !important;
+}
+
+</style><div id="fw-container" style="height: 114px;">	<div id="fw-feed-items-scroll-area" class="scroll-pane" style="height: 114px;">
+		<div id="fw-feed-items" style="margin-top: 0px;">							 <!--fw-feed-item-->							 <!--fw-feed-item-->							 <!--fw-feed-item-->							 <!--fw-feed-item-->							 <!--fw-feed-item-->							 <!--fw-feed-item-->							 <!--fw-feed-item-->							<div class="fw-feed-item fw-item-3">					<div role="button" tabindex="0" title="Breaking News! Bihar Board Class 10 Results Declared" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/bihar-board-class-10-result/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/bihar-board-class-10-result/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="Breaking News! Bihar Board Class 10 Results Declared"> Breaking News! Bihar Board Class 10 Results Declared</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-4">					<div role="button" tabindex="0" title="JEE Main 2023: Exam City Intimation Slip Released" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/jee-main-exam-city-intimation-slip-2023/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/jee-main-exam-city-intimation-slip-2023/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="JEE Main 2023: Exam City Intimation Slip Released"> JEE Main 2023: Exam City Intimation Slip Released</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-5">					<div role="button" tabindex="0" title="JEE Advanced 2023: Changes in Information Brochure for …" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/jee-advanced-2023-changes-in-information-brochure/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/jee-advanced-2023-changes-in-information-brochure/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="JEE Advanced 2023: Changes in Information Brochure for …"> JEE Advanced 2023: Changes in Information Brochure for …</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-6">					<div role="button" tabindex="0" title="CUET-UG 2023: Rush! Last Day for Registration Today" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/cuet-ug-2023-registration-last-day/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/cuet-ug-2023-registration-last-day/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="CUET-UG 2023: Rush! Last Day for Registration Today"> CUET-UG 2023: Rush! Last Day for Registration Today</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-7">					<div role="button" tabindex="0" title="JEE Main 2023 Session 2: NTA Issues Notice on Fake Info…" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/jee-main-2023-session-2-notice-on-fake-info/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/jee-main-2023-session-2-notice-on-fake-info/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="JEE Main 2023 Session 2: NTA Issues Notice on Fake Info…"> JEE Main 2023 Session 2: NTA Issues Notice on Fake Info…</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-8">					<div role="button" tabindex="0" title="Ace NEET UG 2023 With ALLEN’s T20 Video Series" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/ace-neet-ug-2023-with-allen/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/ace-neet-ug-2023-with-allen/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="Ace NEET UG 2023 With ALLEN’s T20 Video Series"> Ace NEET UG 2023 With ALLEN’s T20 Video Series</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-1">					<div role="button" tabindex="0" title="Admit Cards for JEE Main 2023 Session 2 Released" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/admit-card-for-jee-main-2023-session-2/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/admit-card-for-jee-main-2023-session-2/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="Admit Cards for JEE Main 2023 Session 2 Released"> Admit Cards for JEE Main 2023 Session 2 Released</span>												</div>
+					</div>
+				</div><div class="fw-feed-item fw-item-2">					<div role="button" tabindex="0" title="JEE Main 2023 April Session: Last Minute Do’s &amp; Don’ts" class="fw-feed-item-url" onkeypress="window.open(&#39;https://myexam.allen.ac.in/dos-donts-for-jee-main-2023-april-session/&#39; , &#39;_blank&#39;)" onclick="window.open(&#39;https://myexam.allen.ac.in/dos-donts-for-jee-main-2023-april-session/&#39; , &#39;_blank&#39;)">
+						<div class="fw-feed-item-content-module">							<span class="fw-feed-item-title" role="region" aria-label="JEE Main 2023 April Session: Last Minute Do’s &amp; Don’ts"> JEE Main 2023 April Session: Last Minute Do’s &amp; Don’ts</span>												</div>
+					</div>
+				</div> <!--fw-feed-item-->		</div>
+	</div></div> 
+<link rel="stylesheet" href="./font-awesome.min(1).css" crossorigin="anonymous" referrerpolicy="no-referrer"><style type="text/css">
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+
+.jspContainer
+{
+	overflow: hidden;
+	position: relative;
+}
+
+.jspPane
+{
+	position: absolute;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {
+
+	/*Chrome CSS here*/
+
+	.jspPane
+	{
+		left:0 !important;
+	}
+}
+
+.jspVerticalBar
+{
+	position: absolute;
+	top: 0;
+		right: 0;
+		width: 10px;
+	height: 100%;
+	background: red;
+}
+
+.jspHorizontalBar
+{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	height: 10px;
+	background: red;
+}
+
+.jspCap
+{
+	display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+	float: left;
+}
+
+.jspTrack
+{
+	background: #eee;
+	position: relative;
+}
+
+.jspDrag
+{
+	background: #ccc;
+	position: relative;
+	top: 0;
+	left: 0;
+	cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+	float: left;
+	height: 100%;
+}
+
+.jspArrow
+{
+	background: #50506d;
+	text-indent: -20000px;
+	display: block;
+	cursor: pointer;
+	padding: 0;
+	margin: 0;
+}
+
+.jspDisabled
+{
+	cursor: default;
+	background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+	height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+	float: left;
+	width: 10px;
+	height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+	outline: none;
+}
+
+.jspCorner
+{
+	background: #eeeef4;
+	float: left;
+	height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+	margin: 0 -3px 0 0;
+}
+</style>
+<script type="text/javascript">
+/*!
+ * jQuery Mousewheel 3.1.13
+ * Copyright OpenJS Foundation and other contributors
+ */
+!function(e){"function"==typeof define&&define.amd?define(["jquery"],e):"object"==typeof exports?module.exports=e:e(jQuery)}(function(u){var f,d,e=["wheel","mousewheel","DOMMouseScroll","MozMousePixelScroll"],t="onwheel"in window.document||9<=window.document.documentMode?["wheel"]:["mousewheel","DomMouseScroll","MozMousePixelScroll"],w=Array.prototype.slice;if(u.event.fixHooks)for(var i=e.length;i;)u.event.fixHooks[e[--i]]=u.event.mouseHooks;var c=u.event.special.mousewheel={version:"3.1.12",setup:function(){if(this.addEventListener)for(var e=t.length;e;)this.addEventListener(t[--e],n,!1);else this.onmousewheel=n;u.data(this,"mousewheel-line-height",c.getLineHeight(this)),u.data(this,"mousewheel-page-height",c.getPageHeight(this))},teardown:function(){if(this.removeEventListener)for(var e=t.length;e;)this.removeEventListener(t[--e],n,!1);else this.onmousewheel=null;u.removeData(this,"mousewheel-line-height"),u.removeData(this,"mousewheel-page-height")},getLineHeight:function(e){var t=u(e),i=t["offsetParent"in u.fn?"offsetParent":"parent"]();return i.length||(i=u("body")),parseInt(i.css("fontSize"),10)||parseInt(t.css("fontSize"),10)||16},getPageHeight:function(e){return u(e).height()},settings:{adjustOldDeltas:!0,normalizeOffset:!0}};function n(e){var t,i=e||window.event,n=w.call(arguments,1),o=0,l=0,s=0;if((e=u.event.fix(i)).type="mousewheel","detail"in i&&(s=-1*i.detail),"wheelDelta"in i&&(s=i.wheelDelta),"wheelDeltaY"in i&&(s=i.wheelDeltaY),"wheelDeltaX"in i&&(l=-1*i.wheelDeltaX),"axis"in i&&i.axis===i.HORIZONTAL_AXIS&&(l=-1*s,s=0),o=0===s?l:s,"deltaY"in i&&(o=s=-1*i.deltaY),"deltaX"in i&&(l=i.deltaX,0===s&&(o=-1*l)),0!==s||0!==l){if(1===i.deltaMode){var a=u.data(this,"mousewheel-line-height");o*=a,s*=a,l*=a}else if(2===i.deltaMode){var h=u.data(this,"mousewheel-page-height");o*=h,s*=h,l*=h}if(t=Math.max(Math.abs(s),Math.abs(l)),(!d||t<d)&&g(i,d=t)&&(d/=40),g(i,t)&&(o/=40,l/=40,s/=40),o=Math[1<=o?"floor":"ceil"](o/d),l=Math[1<=l?"floor":"ceil"](l/d),s=Math[1<=s?"floor":"ceil"](s/d),c.settings.normalizeOffset&&this.getBoundingClientRect){var r=this.getBoundingClientRect();e.offsetX=e.clientX-r.left,e.offsetY=e.clientY-r.top}return e.deltaX=l,e.deltaY=s,e.deltaFactor=d,e.deltaMode=0,n.unshift(e,o,l,s),f&&window.clearTimeout(f),f=window.setTimeout(m,200),(u.event.dispatch||u.event.handle).apply(this,n)}}function m(){d=null}function g(e,t){return c.settings.adjustOldDeltas&&"mousewheel"===e.type&&t%120==0}u.fn.extend({mousewheel:function(e){return e?this.on("mousewheel",e):this.trigger("mousewheel")},unmousewheel:function(e){return this.off("mousewheel",e)}})});
+</script>
+<script type="text/javascript">
+/*!
+ * jScrollPane - v2.2.1 - 2018-09-27
+ * http://jscrollpane.kelvinluck.com/
+ *
+ * Copyright (c) 2014 Kelvin Luck
+ * Copyright (c) 2017-2018 Tuukka Pasanen
+ * Dual licensed under the MIT or GPL licenses.
+ */
+!function(e){"function"==typeof define&&define.amd?define(["jquery"],e):"object"==typeof exports?module.exports=e(jQuery||require("jquery")):e(jQuery)}(function(be){be.fn.jScrollPane=function(o){function s(w,e){var y,b,k,T,C,S,x,D,B,H,P,z,A,W,Y,M,X,L,R,t,E,I,F,V,q,O,G,N,K,Q,U,$,J,Z,_=this,r=!0,a=!0,l=!1,c=!1,o=w.clone(!1,!1).empty(),ee=!1,te=be.fn.mwheelIntent?"mwheelIntent.jsp":"mousewheel.jsp",oe=function(){0<y.resizeSensorDelay?setTimeout(function(){se(y)},y.resizeSensorDelay):se(y)};function se(e){var t,o,s,i,n,r,a,l,c,p,u,d,f,h,g,j,v=!1,m=!1;if(y=e,void 0===b)n=w.scrollTop(),r=w.scrollLeft(),w.css({overflow:"hidden",padding:0}),k=w.innerWidth()+J,T=w.innerHeight(),w.width(k),b=be('<div class="jspPane" ></y>').css("padding",$).append(w.children()),C=be('<div class="jspContainer" ></div>').css({width:k+"px",height:T+"px"}).append(b).appendTo(w);else{if(w.css("width",""),C.css({width:"auto",height:"auto"}),b.css("position","static"),a=w.innerWidth()+J,l=w.innerHeight(),b.css("position","absolute"),v=y.stickToBottom&&(20<(p=x-T)&&p-we()<10),m=y.stickToRight&&(20<(c=S-k)&&c-me()<10),i=a!==k||l!==T,k=a,T=l,C.css({width:k,height:T}),!i&&Z==S&&b.outerHeight()==x)return void w.width(k);Z=S,b.css("width",""),w.width(k),C.find(">.jspVerticalBar,>.jspHorizontalBar").remove().end()}b.css("overflow","auto"),S=e.contentWidth?e.contentWidth:b[0].scrollWidth,x=b[0].scrollHeight,b.css("overflow",""),D=S/k,H=1<(B=x/T)||y.alwaysShowVScroll,(P=1<D||y.alwaysShowHScroll)||H?(w.addClass("jspScrollable"),(t=y.maintainPosition&&(W||X))&&(o=me(),s=we()),H&&(C.append(be('<div class="jspVerticalBar" ></D>').append(be('<div class="jspCap jspCapTop" ></div>'),be('<div class="jspTrack" ></div>').append(be('<div class="jspDrag" ></div>').append(be('<div class="jspDragTop" ></div>'),be('<div class="jspDragBottom" ></div>'))),be('<div class="jspCap jspCapBottom" ></div>'))),L=C.find(">.jspVerticalBar"),R=L.find(">.jspTrack"),z=R.find(">.jspDrag"),y.showArrows&&(F=be('<a class="jspArrow jspArrowUp" ></a>').on("mousedown.jsp",le(0,-1)).on("click.jsp",ye),V=be('<a class="jspArrow jspArrowDown" ></a>').on("mousedown.jsp",le(0,1)).on("click.jsp",ye),y.arrowScrollOnHover&&(F.on("mouseover.jsp",le(0,-1,F)),V.on("mouseover.jsp",le(0,1,V))),ae(R,y.verticalArrowPositions,F,V)),E=T,C.find(">.jspVerticalBar>.jspCap:visible,>.jspVerticalBar>.jspArrow").each(function(){E-=be(this).outerHeight()}),z.on("mouseenter",function(){z.addClass("jspHover")}).on("mouseleave",function(){z.removeClass("jspHover")}).on("mousedown.jsp",function(e){be("html").on("dragstart.jsp selectstart.jsp",ye),z.addClass("jspActive");var t=e.pageY-z.position().top;return be("html").on("mousemove.jsp",function(e){ue(e.pageY-t,!1)}).on("mouseup.jsp mouseleave.jsp",pe),!1}),ne()),P&&(C.append(be('<div class="jspHorizontalBar" ></div>').append(be('<div class="jspCap jspCapLeft" ></div>'),be('<div class="jspTrack" ></div>').append(be('<div class="jspDrag" ></div>').append(be('<div class="jspDragLeft" ></div>'),be('<div class="jspDragRight" ></div>'))),be('<div class="jspCap jspCapRight" ></div>'))),q=C.find(">.jspHorizontalBar"),O=q.find(">.jspTrack"),Y=O.find(">.jspDrag"),y.showArrows&&(K=be('<a class="jspArrow jspArrowLeft" ></a>').on("mousedown.jsp",le(-1,0)).on("click.jsp",ye),Q=be('<a class="jspArrow jspArrowRight" ></a>').on("mousedown.jsp",le(1,0)).on("click.jsp",ye),y.arrowScrollOnHover&&(K.on("mouseover.jsp",le(-1,0,K)),Q.on("mouseover.jsp",le(1,0,Q))),ae(O,y.horizontalArrowPositions,K,Q)),Y.on("mouseenter",function(){Y.addClass("jspHover")}).on("mouseleave",function(){Y.removeClass("jspHover")}).on("mousedown.jsp",function(e){be("html").on("dragstart.jsp selectstart.jsp",ye),Y.addClass("jspActive");var t=e.pageX-Y.position().left;return be("html").on("mousemove.jsp",function(e){fe(e.pageX-t,!1)}).on("mouseup.jsp mouseleave.jsp",pe),!1}),G=C.innerWidth(),re()),function(){if(P&&H){var e=O.outerHeight(),t=R.outerWidth();E-=e,be(q).find(">.jspCap:visible,>.jspArrow").each(function(){G+=be(this).outerWidth()}),G-=t,T-=t,k-=e,O.parent().append(be('<div class="jspCorner" ></div>').css("width",e+"px")),ne(),re()}P&&b.width(C.outerWidth()-J+"px");x=b.outerHeight(),B=x/T,P&&((N=Math.ceil(1/D*G))>y.horizontalDragMaxWidth?N=y.horizontalDragMaxWidth:N<y.horizontalDragMinWidth&&(N=y.horizontalDragMinWidth),Y.css("width",N+"px"),M=G-N,he(X));H&&((I=Math.ceil(1/B*E))>y.verticalDragMaxHeight?I=y.verticalDragMaxHeight:I<y.verticalDragMinHeight&&(I=y.verticalDragMinHeight),z.css("height",I+"px"),A=E-I,de(W))}(),t&&(je(m?S-k:o,!1),ge(v?x-T:s,!1)),b.find(":input,a").off("focus.jsp").on("focus.jsp",function(e){ve(e.target,!1)}),C.off(te).on(te,function(e,t,o,s){X||(X=0),W||(W=0);var i=X,n=W,r=e.deltaFactor||y.mouseWheelSpeed;return _.scrollBy(o*r,-s*r,!1),i==X&&n==W}),j=!1,C.off("touchstart.jsp touchmove.jsp touchend.jsp click.jsp-touchclick").on("touchstart.jsp",function(e){var t=e.originalEvent.touches[0];u=me(),d=we(),f=t.pageX,h=t.pageY,j=!(g=!1)}).on("touchmove.jsp",function(e){if(j){var t=e.originalEvent.touches[0],o=X,s=W;return _.scrollTo(u+f-t.pageX,d+h-t.pageY),g=g||5<Math.abs(f-t.pageX)||5<Math.abs(h-t.pageY),o==X&&s==W}}).on("touchend.jsp",function(e){j=!1}).on("click.jsp-touchclick",function(e){if(g)return g=!1}),y.enableKeyboardNavigation&&function(){var s,i,n=[];P&&n.push(q[0]);H&&n.push(L[0]);b.on("focus.jsp",function(){w.focus()}),w.attr("tabindex",0).off("keydown.jsp keypress.jsp").on("keydown.jsp",function(e){if(e.target===this||n.length&&be(e.target).closest(n).length){var t=X,o=W;switch(e.keyCode){case 40:case 38:case 34:case 32:case 33:case 39:case 37:s=e.keyCode,r();break;case 35:ge(x-T),s=null;break;case 36:ge(0),s=null}return!(i=e.keyCode==s&&t!=X||o!=W)}}).on("keypress.jsp",function(e){if(e.keyCode==s&&r(),e.target===this||n.length&&be(e.target).closest(n).length)return!i}),y.hideFocus?(w.css("outline","none"),"hideFocus"in C[0]&&w.attr("hideFocus",!0)):(w.css("outline",""),"hideFocus"in C[0]&&w.attr("hideFocus",!1));function r(){var e=X,t=W;switch(s){case 40:_.scrollByY(y.keyboardSpeed,!1);break;case 38:_.scrollByY(-y.keyboardSpeed,!1);break;case 34:case 32:_.scrollByY(T*y.scrollPagePercent,!1);break;case 33:_.scrollByY(-T*y.scrollPagePercent,!1);break;case 39:_.scrollByX(y.keyboardSpeed,!1);break;case 37:_.scrollByX(-y.keyboardSpeed,!1)}return i=e!=X||t!=W}}(),y.clickOnTrack&&function(){ce(),H&&R.on("mousedown.jsp",function(i){if(void 0===i.originalTarget||i.originalTarget==i.currentTarget){var n,r=be(this),e=r.offset(),a=i.pageY-e.top-W,l=!0,c=function(){var e=r.offset(),t=i.pageY-e.top-I/2,o=T*y.scrollPagePercent,s=A*o/(x-T);if(a<0)t<W-s?_.scrollByY(-o):ue(t);else{if(!(0<a))return void p();W+s<t?_.scrollByY(o):ue(t)}n=setTimeout(c,l?y.initialDelay:y.trackClickRepeatFreq),l=!1},p=function(){n&&clearTimeout(n),n=null,be(document).off("mouseup.jsp",p)};return c(),be(document).on("mouseup.jsp",p),!1}});P&&O.on("mousedown.jsp",function(i){if(void 0===i.originalTarget||i.originalTarget==i.currentTarget){var n,r=be(this),e=r.offset(),a=i.pageX-e.left-X,l=!0,c=function(){var e=r.offset(),t=i.pageX-e.left-N/2,o=k*y.scrollPagePercent,s=M*o/(S-k);if(a<0)t<X-s?_.scrollByX(-o):fe(t);else{if(!(0<a))return void p();X+s<t?_.scrollByX(o):fe(t)}n=setTimeout(c,l?y.initialDelay:y.trackClickRepeatFreq),l=!1},p=function(){n&&clearTimeout(n),n=null,be(document).off("mouseup.jsp",p)};return c(),be(document).on("mouseup.jsp",p),!1}})}(),function(){if(location.hash&&1<location.hash.length){var e,t,o=escape(location.hash.substr(1));try{e=be("#"+o+', a[name="'+o+'"]')}catch(e){return}e.length&&b.find(o)&&(0===C.scrollTop()?t=setInterval(function(){0<C.scrollTop()&&(ve(e,!0),be(document).scrollTop(C.position().top),clearInterval(t))},50):(ve(e,!0),be(document).scrollTop(C.position().top)))}}(),y.hijackInternalLinks&&function(){if(be(document.body).data("jspHijack"))return;be(document.body).data("jspHijack",!0),be(document.body).delegate('a[href*="#"]',"click",function(e){var t,o,s,i,n,r=this.href.substr(0,this.href.indexOf("#")),a=location.href;if(-1!==location.href.indexOf("#")&&(a=location.href.substr(0,location.href.indexOf("#"))),r===a){t=escape(this.href.substr(this.href.indexOf("#")+1));try{o=be("#"+t+', a[name="'+t+'"]')}catch(e){return}o.length&&(s=o.closest(".jspScrollable"),s.data("jsp").scrollToElement(o,!0),s[0].scrollIntoView&&(i=be(window).scrollTop(),((n=o.offset().top)<i||n>i+be(window).height())&&s[0].scrollIntoView()),e.preventDefault())}})}()):(w.removeClass("jspScrollable"),b.css({top:0,left:0,width:C.width()-J}),C.off(te),b.find(":input,a").off("focus.jsp"),w.attr("tabindex","-1").removeAttr("tabindex").off("keydown.jsp keypress.jsp"),b.off(".jsp"),ce()),y.resizeSensor||!y.autoReinitialise||U?y.resizeSensor||y.autoReinitialise||!U||clearInterval(U):U=setInterval(function(){se(y)},y.autoReinitialiseDelay),y.resizeSensor&&!ee&&(ie(b,oe),ie(w,oe),ie(w.parent(),oe),window.addEventListener("resize",oe),ee=!0),n&&w.scrollTop(0)&&ge(n,!1),r&&w.scrollLeft(0)&&je(r,!1),w.trigger("jsp-initialised",[P||H])}function ie(e,t){var o,s,i=document.createElement("div"),n=document.createElement("div"),r=document.createElement("div"),a=document.createElement("div"),l=document.createElement("div");i.style.cssText="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: scroll; z-index: -1; visibility: hidden;",n.style.cssText="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: scroll; z-index: -1; visibility: hidden;",a.style.cssText="position: absolute; left: 0; top: 0; right: 0; bottom: 0; overflow: scroll; z-index: -1; visibility: hidden;",r.style.cssText="position: absolute; left: 0; top: 0;",l.style.cssText="position: absolute; left: 0; top: 0; width: 200%; height: 200%;";var c=function(){r.style.width=n.offsetWidth+10+"px",r.style.height=n.offsetHeight+10+"px",n.scrollLeft=n.scrollWidth,n.scrollTop=n.scrollHeight,a.scrollLeft=a.scrollWidth,a.scrollTop=a.scrollHeight,o=e.width(),s=e.height()};n.addEventListener("scroll",function(){(e.width()>o||e.height()>s)&&t.apply(this,[]),c()}.bind(this)),a.addEventListener("scroll",function(){(e.width()<o||e.height()<s)&&t.apply(this,[]),c()}.bind(this)),n.appendChild(r),a.appendChild(l),i.appendChild(n),i.appendChild(a),e.append(i),"static"===window.getComputedStyle(e[0],null).getPropertyValue("position")&&(e[0].style.position="relative"),c()}function ne(){R.height(E+"px"),W=0,t=y.verticalGutter+R.outerWidth(),b.width(k-t-J);try{0===L.position().left&&b.css("margin-left",t+"px")}catch(e){}}function re(){C.find(">.jspHorizontalBar>.jspCap:visible,>.jspHorizontalBar>.jspArrow").each(function(){G-=be(this).outerWidth()}),O.width(G+"px"),X=0}function ae(e,t,o,s){var i,n="before",r="after";"os"==t&&(t=/Mac/.test(navigator.platform)?"after":"split"),t==n?r=t:t==r&&(n=t,i=o,o=s,s=i),e[n](o)[r](s)}function le(e,t,o){return function(){return function(e,t,o,s){o=be(o).addClass("jspActive");var i,n,r=!0,a=function(){0!==e&&_.scrollByX(e*y.arrowButtonSpeed),0!==t&&_.scrollByY(t*y.arrowButtonSpeed),n=setTimeout(a,r?y.initialDelay:y.arrowRepeatFreq),r=!1};a(),i=s?"mouseout.jsp":"mouseup.jsp",(s=s||be("html")).on(i,function(){o.removeClass("jspActive"),n&&clearTimeout(n),n=null,s.off(i)})}(e,t,this,o),this.blur(),!1}}function ce(){O&&O.off("mousedown.jsp"),R&&R.off("mousedown.jsp")}function pe(){be("html").off("dragstart.jsp selectstart.jsp mousemove.jsp mouseup.jsp mouseleave.jsp"),z&&z.removeClass("jspActive"),Y&&Y.removeClass("jspActive")}function ue(e,t){if(H){e<0?e=0:A<e&&(e=A);var o=new be.Event("jsp-will-scroll-y");if(w.trigger(o,[e]),!o.isDefaultPrevented()){var s=e||0,i=0===s,n=s==A,r=-(e/A)*(x-T);void 0===t&&(t=y.animateScroll),t?_.animate(z,"top",e,de,function(){w.trigger("jsp-user-scroll-y",[-r,i,n])}):(z.css("top",e),de(e),w.trigger("jsp-user-scroll-y",[-r,i,n]))}}}function de(e){void 0===e&&(e=z.position().top),C.scrollTop(0);var t,o,s=0===(W=e||0),i=W==A,n=-(e/A)*(x-T);r==s&&l==i||(r=s,l=i,w.trigger("jsp-arrow-change",[r,l,a,c])),t=s,o=i,y.showArrows&&(F[t?"addClass":"removeClass"]("jspDisabled"),V[o?"addClass":"removeClass"]("jspDisabled")),b.css("top",n),w.trigger("jsp-scroll-y",[-n,s,i]).trigger("scroll")}function fe(e,t){if(P){e<0?e=0:M<e&&(e=M);var o=new be.Event("jsp-will-scroll-x");if(w.trigger(o,[e]),!o.isDefaultPrevented()){var s=e||0,i=0===s,n=s==M,r=-(e/M)*(S-k);void 0===t&&(t=y.animateScroll),t?_.animate(Y,"left",e,he,function(){w.trigger("jsp-user-scroll-x",[-r,i,n])}):(Y.css("left",e),he(e),w.trigger("jsp-user-scroll-x",[-r,i,n]))}}}function he(e){void 0===e&&(e=Y.position().left),C.scrollTop(0);var t,o,s=0===(X=e||0),i=X==M,n=-(e/M)*(S-k);a==s&&c==i||(a=s,c=i,w.trigger("jsp-arrow-change",[r,l,a,c])),t=s,o=i,y.showArrows&&(K[t?"addClass":"removeClass"]("jspDisabled"),Q[o?"addClass":"removeClass"]("jspDisabled")),b.css("left",n),w.trigger("jsp-scroll-x",[-n,s,i]).trigger("scroll")}function ge(e,t){ue(e/(x-T)*A,t)}function je(e,t){fe(e/(S-k)*M,t)}function ve(e,t,o){var s,i,n,r,a,l,c,p,u,d=0,f=0;try{s=be(e)}catch(e){return}for(i=s.outerHeight(),n=s.outerWidth(),C.scrollTop(0),C.scrollLeft(0);!s.is(".jspPane");)if(d+=s.position().top,f+=s.position().left,s=s.offsetParent(),/^body|html$/i.test(s[0].nodeName))return;l=(r=we())+T,d<r||t?p=d-y.horizontalGutter:l<d+i&&(p=d-T+i+y.horizontalGutter),isNaN(p)||ge(p,o),c=(a=me())+k,f<a||t?u=f-y.horizontalGutter:c<f+n&&(u=f-k+n+y.horizontalGutter),isNaN(u)||je(u,o)}function me(){return-b.position().left}function we(){return-b.position().top}function ye(){return!1}"border-box"===w.css("box-sizing")?J=$=0:($=w.css("paddingTop")+" "+w.css("paddingRight")+" "+w.css("paddingBottom")+" "+w.css("paddingLeft"),J=(parseInt(w.css("paddingLeft"),10)||0)+(parseInt(w.css("paddingRight"),10)||0)),be.extend(_,{reinitialise:function(e){se(e=be.extend({},y,e))},scrollToElement:function(e,t,o){ve(e,t,o)},scrollTo:function(e,t,o){je(e,o),ge(t,o)},scrollToX:function(e,t){je(e,t)},scrollToY:function(e,t){ge(e,t)},scrollToPercentX:function(e,t){je(e*(S-k),t)},scrollToPercentY:function(e,t){ge(e*(x-T),t)},scrollBy:function(e,t,o){_.scrollByX(e,o),_.scrollByY(t,o)},scrollByX:function(e,t){fe((me()+Math[e<0?"floor":"ceil"](e))/(S-k)*M,t)},scrollByY:function(e,t){ue((we()+Math[e<0?"floor":"ceil"](e))/(x-T)*A,t)},positionDragX:function(e,t){fe(e,t)},positionDragY:function(e,t){ue(e,t)},animate:function(e,t,o,s,i){var n={};n[t]=o,e.animate(n,{duration:y.animateDuration,easing:y.animateEase,queue:!1,step:s,complete:i})},getContentPositionX:function(){return me()},getContentPositionY:function(){return we()},getContentWidth:function(){return S},getContentHeight:function(){return x},getPercentScrolledX:function(){return me()/(S-k)},getPercentScrolledY:function(){return we()/(x-T)},getIsScrollableH:function(){return P},getIsScrollableV:function(){return H},getContentPane:function(){return b},scrollToBottom:function(e){ue(A,e)},hijackInternalLinks:be.noop,destroy:function(){var e,t;e=we(),t=me(),w.removeClass("jspScrollable").off(".jsp"),b.off(".jsp"),w.replaceWith(o.append(b.children())),o.scrollTop(e),o.scrollLeft(t),U&&clearInterval(U)}}),se(e)}return o=be.extend({},be.fn.jScrollPane.defaults,o),be.each(["arrowButtonSpeed","trackClickSpeed","keyboardSpeed"],function(){o[this]=o[this]||o.speed}),this.each(function(){var e=be(this),t=e.data("jsp");t?t.reinitialise(o):(be("script",e).filter('[type="text/javascript"],:not([type])').remove(),t=new s(e,o),e.data("jsp",t))})},be.fn.jScrollPane.defaults={showArrows:!1,maintainPosition:!0,stickToBottom:!1,stickToRight:!1,clickOnTrack:!0,autoReinitialise:!1,autoReinitialiseDelay:500,verticalDragMinHeight:0,verticalDragMaxHeight:99999,horizontalDragMinWidth:0,horizontalDragMaxWidth:99999,contentWidth:void 0,animateScroll:!1,animateDuration:300,animateEase:"linear",hijackInternalLinks:!1,verticalGutter:4,horizontalGutter:4,mouseWheelSpeed:3,arrowButtonSpeed:0,arrowRepeatFreq:50,arrowScrollOnHover:!1,trackClickSpeed:0,trackClickRepeatFreq:70,verticalArrowPositions:"split",horizontalArrowPositions:"split",enableKeyboardNavigation:!0,hideFocus:!1,keyboardSpeed:0,initialDelay:300,speed:30,scrollPagePercent:.8,alwaysShowVScroll:!1,alwaysShowHScroll:!1,resizeSensor:!1,resizeSensorDelay:0}});
+</script>
+<script type="text/javascript">
+var auto_scroll_timer;
+var dom_items;
+var dom_item;
+
+function auto_scroll_init() {
+	if ($('#fw-feed-items').length) {
+		dom_items = $('#fw-feed-items');
+		dom_item = $('.fw-feed-item');
+	} else if ($('#fw-fb-feed-items').length) {
+		dom_items = $('#fw-fb-feed-items');
+		dom_item = $('.fw-fb-feed-item');
+	} else if ($('#fw-gc-feed-items').length) {
+		dom_items = $('#fw-gc-feed-items');
+		dom_item = $('.fw-gc-feed-item');
+	} else if ($('#fw-ig-feed-items').length) {
+		dom_items = $('#fw-ig-feed-items');
+		dom_item = $('.fw-ig-feed-item');
+	} else if ($('#fw-yt-feed-items').length) {
+		dom_items = $('#fw-yt-feed-items');
+		dom_item = $('.fw-yt-feed-item');
+	} else {
+		dom_items = $('#fw-tw-feed-items');
+		dom_item = $('.fw-tw-feed-item');
+	}
+}
+
+function auto_scroll_off(){
+	clearInterval(auto_scroll_timer);
+}
+
+function auto_scroll_on(){
+	
+	auto_scroll_timer = setInterval(function(){ autoscroll() }, 4 * 1000);
+}
+
+function autoscroll() {
+	auto_scroll_init();
+
+	
+		var item_height = dom_item.first().outerHeight(true);
+		dom_items.animate(
+			{ 'marginTop':"-"+item_height+"px", },
+			{
+				complete:function(){
+					dom_item.first().insertAfter(dom_item.last());
+					dom_items.css({'marginTop':'0px'});
+				},
+				duration: 800,
+			}
+		);
+	
+}
+
+// Auto scroll(movie credit)
+function auto_scroll_mc_off() {
+	auto_scroll_init();
+	dom_items.pause();
+}
+
+function auto_scroll_mc_on() {
+	
+
+	auto_scroll_init();
+	dom_items.resume();
+}
+
+function auto_scroll_mc_init() {
+	var list_height = 0;
+
+	auto_scroll_init();
+	dom_item.each(function(i, elem){
+		dom_items.append($(this).clone(true));
+		list_height += $(this).outerHeight(true);
+	});
+	mcscroll(list_height);
+}
+
+function mcscroll(list_height) {
+	var dur = list_height * 20;
+
+	auto_scroll_init();
+	
+		dom_items.css({'marginTop':'0px'});
+		dom_items.animate(
+			{ 'marginTop':"-"+list_height+"px", },
+			{
+				complete: function() {
+					dom_items.css({'marginTop':'0px'});
+					mcscroll(list_height);
+				},
+				easing: 'linear',
+				duration: dur,
+			}
+		);
+	
+}
+</script>
+<script type="text/javascript">
+/*
+ * Pause jQuery plugin v0.1
+ *
+ * Copyright 2010 by Tobia Conforto <tobia.conforto@gmail.com>
+ *
+ * Based on Pause-resume-animation jQuery plugin by Joe Weitzel
+ *
+ * This program is free software; you can redistribute it and/or modify it
+ * under the terms of the GNU General Public License as published by the Free
+ * Software Foundation; either version 2 of the License, or(at your option)
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful, but WITHOUT
+ * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
+ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for
+ * more details.
+ *
+ * You should have received a copy of the GNU General Public License along with
+ * this program; if not, write to the Free Software Foundation, Inc., 51
+ * Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
+ */
+(function(){var e=jQuery,f="jQuery.pause",d=1,b=e.fn.animate,a={};function c(){return new Date().getTime()}e.fn.animate=function(k,h,j,i){var g=e.speed(h,j,i);g.complete=g.old;return this.each(function(){if(!this[f]){this[f]=d++}var l=e.extend({},g);b.apply(e(this),[k,e.extend({},l)]);a[this[f]]={run:true,prop:k,opt:l,start:c(),done:0}})};e.fn.pause=function(){return this.each(function(){if(!this[f]){this[f]=d++}var g=a[this[f]];if(g&&g.run){g.done+=c()-g.start;if(g.done>g.opt.duration){delete a[this[f]]}else{e(this).stop();g.run=false}}})};e.fn.resume=function(){return this.each(function(){if(!this[f]){this[f]=d++}var g=a[this[f]];if(g&&!g.run){g.opt.duration-=g.done;g.done=0;g.run=true;g.start=c();b.apply(e(this),[g.prop,e.extend({},g.opt)])}})}})();
+</script>
+<script type="text/javascript">
+$(function() {
+	var params={};
+	window.location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+	var fwIframeId = (params.id ? params.id : "");
+
+	var ActionEnum = { C_OPEN_INIF: 'C_OPEN_INIF'};
+
+	var dom_container;
+	if ($('#fw-container').length) {
+		dom_container = $('#fw-container');
+	} else if ($('#fw-fb-container').length) {
+		dom_container = $('#fw-fb-container');
+	} else if ($('#fw-ig-container').length) {
+		dom_container = $('#fw-ig-container');
+	} else if ($('#fw-gc-container').length) {
+		dom_container = $('#fw-gc-container');
+	} else if ($('#fw-yt-container').length) {
+		dom_container = $('#fw-yt-container');
+	} else {
+		dom_container = $('#fw-tw-container');
+	}
+
+	var dom_scroll_area;
+	if ($('#fw-feed-items-scroll-area').length) {
+		dom_scroll_area = $('#fw-feed-items-scroll-area');
+	} else if ($('#fw-fb-feed-items-scroll-area').length) {
+		dom_scroll_area = $('#fw-fb-feed-items-scroll-area');
+	} else if ($('#fw-ig-feed-items-scroll-area').length) {
+		dom_scroll_area = $('#fw-ig-feed-items-scroll-area');
+	} else if ($('#fw-gc-feed-items-scroll-area').length) {
+		dom_scroll_area = $('#fw-gc-feed-items-scroll-area');
+	} else if ($('#fw-yt-feed-items-scroll-area').length) {
+		dom_scroll_area = $('#fw-yt-feed-items-scroll-area');
+	} else {
+		dom_scroll_area = $('#fw-tw-feed-items-scroll-area');
+	}
+
+	var dom_item_image;
+	if ($('.fw-feed-item-image').length) {
+		dom_item_image = $('.fw-feed-item-image');
+	} else if ($('.fw-fb-feed-item-image').length) {
+		dom_item_image = $('.fw-fb-feed-item-image');
+	} else if ($('.fw-gc-feed-item-image').length) {
+		dom_item_image = $('.fw-gc-feed-item-image');
+	} else if ($('.fw-ig-feed-item-image').length) {
+		dom_item_image = $('.fw-ig-feed-item-image');
+	} else if ($('.fw-tw-feed-item-image').length) {
+		dom_item_image = $('.fw-tw-feed-item-image');
+	} else if ($('.fw-yt-feed-item-image').length) {
+		dom_item_image = $('.fw-yt-feed-item-image');
+	} else {
+		dom_item_image = $('.fw-tw-feed-item-image');
+	}
+
+	function postToParent(width, height) {
+		var message = {};
+		message.width = width;
+		message.height = height;
+		message.uri=window.location.href;
+
+		var sources = new Array();			var _s = {};
+			_s.source = 'http://myexam.allen.ac.in/';
+			_s.type = '';
+			_s.title = '';
+			_s.replaceable = 'false';
+			_s.error = '';
+			_s.sameorigin_flag = '';
+			sources.push(_s);		message.sources = sources;		var target = parent.postMessage ? parent : ( parent.document.postMessage ? parent.document : undefined);
+		if (typeof target != "undefined"){
+			target.postMessage(message , "*");
+		}
+	}
+
+	var init_slick = false;
+	function updateHeight() {
+		var items_height = 0;			for  (var i=0; i<2; i++) {
+				items_height += $('.fw-feed-item, .fw-fb-feed-item, .fw-gc-feed-item, .fw-ig-feed-item, .fw-tw-feed-item, .fw-yt-feed-item').eq(i).outerHeight(true);
+			}
+		$('.scroll-pane').height(items_height);		var cHeight = $("header").outerHeight() + dom_scroll_area.outerHeight() + $('.fw-feed-more-posts-link').outerHeight(true);		dom_container.height(cHeight);	}
+
+	function getWidth() {		return "100%";	}
+
+	function getHeight() {
+		var ifHeight = 0;			ifHeight = dom_container.height() + $('.fw-branding').outerHeight(true);		return ifHeight + 'px';
+	}
+
+	$('.fw-feed-item a').not(".fw-feed-item-url").click(function(e) {
+		$(this).attr("target", "_blank");
+		e.stopPropagation();
+	});
+
+	openWithinIframe = function(thiss, url) {
+		var message = {};
+		message.width = getWidth();
+		message.height = getHeight();
+		message.uri=window.location.href;
+		message.linkUri=url;
+		message.iframeId=fwIframeId;
+
+		message.action = ActionEnum.C_OPEN_INIF;
+		var target = parent.postMessage ? parent : ( parent.document.postMessage ? parent.document : undefined);
+		if (typeof target != "undefined") {
+			target.postMessage(message , "*");
+		}
+	}
+
+	playYoutubeVideo = function (postfix, vLink, e) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		$("#player-" + postfix).attr("allow", "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture");
+		$("#player-" + postfix).attr("src", vLink);
+
+		setTimeout(function() {
+			$("#yt-image-" + postfix).hide();
+			$("#yt-player-" + postfix).show();
+		}, 1000)
+	}
+
+	updateHeight();
+	postToParent(getWidth(), 150);
+
+	setTimeout(function(){
+		updateHeight();
+		postToParent(getWidth(), getHeight());
+					auto_scroll_on();
+					dom_container.hover(
+						function(){
+							auto_scroll_off();
+							$('.jspVerticalBar').css('visibility','visible');
+						},
+						function(){
+							auto_scroll_on();
+							$('.jspVerticalBar').css('visibility','hidden');
+						}
+					);		updateHeight();
+		postToParent(getWidth(), getHeight());
+		var i_count = 0;
+		var _interval = setInterval(function () {
+			updateHeight();
+			postToParent(getWidth(), getHeight());
+			if (++i_count === 10) {
+				window.clearInterval(_interval);
+			}
+		}, 500);
+	}, 100);
+	$(document).ready(function() {
+		$('.ad').find('img').each(function(index, element){
+			var original_img = $(this);
+			$("<img>").attr("src", original_img.attr("src")).load(function(){
+				if (this.height >= 100) {
+					original_img.closest('.ad').show();
+				}
+			});
+		});
+	});
+	setTimeout(function(){
+		$('.ad').each(function(index, element) {
+			console.log($(this).height());
+			if ($(this).height() < 30) {
+				var message = '<a href="https://feed.mikle.com" target="_blank">[Ad] Create a widget like this with FeedWind</a>';
+				$(this).html('<p align="center">' + message + '</p>').show();
+			}
+		});
+	}, 2000);});
+</script>
+</body></html>
